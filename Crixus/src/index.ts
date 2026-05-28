@@ -5,10 +5,7 @@ const PORT = 3000;
 
 //GET is the HTTP method
 app.get("/",(req,res) =>{
-    res.send("Hello from Typescript Backend");
-});
-app.get("/gur",(req,res) =>{
-    res.send("Hello from Typescript Backend by gur");
+    res.send("Crixus Fight Organizer.\nGroup Members:\t\nAlex Sturgeon\t\nGurkirat Singh\t\nKenneth Barclay");
 });
 
 app.listen(PORT,() =>{
