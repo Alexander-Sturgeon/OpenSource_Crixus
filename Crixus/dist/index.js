@@ -14,6 +14,9 @@ app.get("/", (req, res) => {
 app.get("/gur", (req, res) => {
     res.send("Hello from Typescript Backend by gur");
 });
+app.get("/gur", (req, res) => {
+    res.send("Hello from Typescript Backend by Gur");
+});
 app.listen(PORT, () => {
     console.log(`Server runing on port ${PORT}`);
 });
