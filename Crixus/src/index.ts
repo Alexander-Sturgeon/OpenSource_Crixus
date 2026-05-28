@@ -7,6 +7,9 @@ const PORT = 3000;
 app.get("/",(req,res) =>{
     res.send("Hello from Typescript Backend");
 });
+app.get("/gur",(req,res) =>{
+    res.send("Hello from Typescript Backend by gur");
+});
 
 app.listen(PORT,() =>{
     console.log(`Server runing on port ${PORT}`);
