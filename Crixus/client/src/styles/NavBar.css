@@ -1,0 +1,51 @@
+.nav-bar{
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    
+}
+.nav-bar p{
+    cursor: pointer;
+}
+.nav-title{
+    text-align: center;
+    display: flex;
+}
+.nav-left{
+    flex: 1;
+    display: flex;
+    
+    align-items: flex-start;
+}
+.nav-left img{
+    width: 2rem;
+    height: 2rem;
+    margin-left: .25rem;
+}
+.nav-drawer{
+    margin: 0rem .5rem 0rem;
+    background-color: none;
+    border: none;
+    padding: .25rem;
+    cursor: pointer;
+    border-radius: 50%;
+    object-fit: cover;
+    justify-self: center;
+    
+}
+.nav-right{
+    flex: 1;
+}
+
+/* Sidebar */
+
+.side-bar{
+    background-color: #C0C0C0E6;
+    position: absolute;
+    top: 5rem;
+    left:.25rem;
+    z-index: 100;
+    border-radius: .5rem;
+    padding: 3rem;
+}

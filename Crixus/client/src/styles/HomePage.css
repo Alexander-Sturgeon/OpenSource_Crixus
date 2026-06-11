@@ -1,0 +1,20 @@
+.home-main{
+    background-color: #460F3D;
+    color: white;
+    max-height: 1080px ;
+}
+.home-highlights{
+    border: 5px solid black;
+    background-color: #383838;
+    margin: 2rem 0rem 2rem;
+    height: 200px;
+    border-radius: 10px;
+    padding: 1rem;
+}
+.home-tool-highlights{
+    margin: 4rem 1rem 4rem;
+    gap: 8rem;
+    max-height: 700px;
+    display: flex;
+    justify-content: center;
+}
