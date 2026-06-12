@@ -1,6 +1,10 @@
+//Styles
 import "../styles/NavBar.css"
+//Images
 import Sidebar from "./SideBar";
 import drawerIcon from "../assets/drawer.png";//Default Image (Replace later)
+import Logo from "../assets/LogoPlaceholder.png";//Default Image (Replace later)
+//Logic
 import { useState } from "react";
 
 //Side Bar
@@ -18,11 +22,11 @@ function Navbar(){
                 
                 
                 {/* <a>{isUser ?? User.name : Login}</a> */}
-                <p>Login</p>
+                <p className="username-or-login">Login</p>
             </div>
             
             <div className="nav-title">
-                <img src="" alt="Logo"></img>
+                <img src={Logo} alt="Logo"></img>
                 <h1>Crixus</h1>
             </div>
             <div className="nav-right"></div>

@@ -4,11 +4,11 @@ function Footer(){
 
     return(
         <footer className="footer">
-            <p>@Crixus</p>
-            <p>@Alexander Sturgeon</p>
-            <p>@Kenneth Barclay</p>
-            <p>@Gurkirat Singh</p>
-            <p>@Privacy Policy</p>
+            <p>&copy;Crixus</p>
+            <p>&copy;Alexander Sturgeon</p>
+            <p>&copy;Kenneth Barclay</p>
+            <p>&copy;Gurkirat Singh</p>
+            <p>&copy;Privacy Policy</p>
         </footer>
     )
 }

@@ -1,29 +1,53 @@
 import "../styles/NavBar.css"
+import SettingsIcon from "../assets/SettingsIcon.png";
+import IconPlaceholder from "../assets/HomeIconPlaceHolder.png";
 
 function Sidebar(){
     return(
-        <ul className="side-bar">
-            <li>
-                <img src="" alt="Homepage Icon"/>
-                <p>Home</p>
-            </li>
-            <li>
-                <img src="" alt="Fighters Icon"/>
-                <p>Fighters</p>
-            </li>
-            <li>
-                <img src="" alt="Armory Icon"/>
-                <p>Armory</p>
-            </li>
-            <li>
-                <img src="" alt="Arena Icon"/>
-                <p>Arena</p>
-            </li>
-            <li>
-                <img src="" alt="About Us Icon"/>
-                <p>About Us</p>
-            </li>
-        </ul>
+        <div className="side-bar">
+            <ul>
+                <li>
+                    <button >
+                       <img src={IconPlaceholder} alt="Homepage Icon"/> 
+                    </button>
+                    
+                    <p>Home</p>
+                </li>
+                <li>
+                    <button>
+                        <img src={IconPlaceholder} alt="Fighters Icon"/>
+                    </button>
+                    
+                    <p>Fighters</p>
+                </li>
+                <li>
+                    <button>
+                        <img src={IconPlaceholder} alt="Armory Icon"/>
+                    </button>
+                    
+                    <p>Armory</p>
+                </li>
+                <li>
+                    <button>
+                        <img src={IconPlaceholder} alt="Arena Icon"/>
+                    </button>
+                    
+                    <p>Arena</p>
+                </li>
+                <li>
+                    <button>
+                        <img src={IconPlaceholder} alt="About Us Icon"/>
+                    </button>
+                    
+                    <p>About Us</p>
+                </li>
+            </ul>
+            <div className="side-bar-user">
+                <img src={SettingsIcon} alt="Settings Icon"></img>
+                <p>Login</p>
+            </div>
+        </div>
+        
     )
 }
 
