@@ -1,9 +1,18 @@
-
+import HomePage from "./pages/HomePage";
+import Navbar from "./components/NavBar";
+import Footer from "./components/Footer";
+import "../src/App.css";
 
 function App(){
 
   return(
-    <div><h1>Crixus</h1></div>
+    <>
+      <Navbar/>
+      <HomePage/>
+
+      <Footer/>
+    </>
+    
   )
 }
 

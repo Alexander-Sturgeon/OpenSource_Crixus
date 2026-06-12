@@ -1,0 +1,132 @@
+.nav-bar{
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    
+}
+.nav-title{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+}
+.nav-title img{
+    height: 1.5rem;
+    width: 1.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.nav-left{
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+}
+.nav-left img{
+    width: 2rem;
+    height: 2rem;
+    margin-left: .25rem;
+    
+}
+.nav-drawer{
+    margin: 0rem .5rem 0rem;
+    border: none;
+    padding: .25rem;
+    border-radius: 50%;
+    object-fit: cover;
+    justify-self: center;
+    background-color: #FFD700;
+}
+.nav-drawer :hover{
+    /* margin: 0rem .5rem 0rem; */
+    border: none;
+    padding: .1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #FFD700;
+}
+.nav-right{
+    flex: 1;
+}
+.username-or-login{
+    cursor: pointer;
+    color:white;
+
+}
+.username-or-login:hover{
+    color: #C0C0C0;
+    
+}
+
+/* Sidebar */
+
+.side-bar{
+    background-color: #C0C0C0E6;
+    position: absolute;
+    top: 5rem;
+    left:.25rem;
+    z-index: 100;
+    border-radius: .5rem;
+    padding: 3rem;
+
+}
+.side-bar ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.side-bar ul li{
+    text-align: center;
+    margin: .25rem;
+}
+.side-bar ul li button{
+    width: 3rem;
+    height: 3rem;
+    justify-content: center;
+    align-items: center;
+    object-fit:cover;
+    border-radius: 50%;
+    position: relative;
+    /* Remove Default Styling for Button */
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+.side-bar ul li button img{
+    width: 3rem;
+    height: 3rem;
+    object-fit:cover;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    /* Attempt to stop it moving everything */
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.side-bar ul li button :hover{
+    width: 3.1rem;
+    height: 3.1rem;
+    cursor: pointer;
+
+}
+.side-bar-user{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+.side-bar-user img{
+    height: 1rem;
+    width: 1rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.side-bar-user :hover{
+    cursor: pointer;
+    height: 1.1rem;
+    width: 1.1rem;
+}
