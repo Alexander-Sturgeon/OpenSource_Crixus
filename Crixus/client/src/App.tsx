@@ -1,6 +1,7 @@
 //Pages
-import HomePage from "./pages/HomePage";
-import ArmoryPage from "./pages/ArmoryPage";
+// import HomePage from "./pages/HomePage";
+// import ArmoryPage from "./pages/ArmoryPage";
+import LoginPage from "./pages/Login";
 //Components
 import Navbar from "./components/NavBar";
 //Styles
@@ -12,8 +13,9 @@ function App(){
   return(
     <>
       <Navbar/>
-      <HomePage/>
+      {/* <HomePage/> */}
       {/* <ArmoryPage/> */}
+      <LoginPage/>
       <Footer/>
     </>
     
