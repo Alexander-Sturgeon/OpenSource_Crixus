@@ -1,0 +1,88 @@
+/* Tabs */
+.tab-view{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0rem 4rem 1rem;
+    background-color: white;
+    position: relative;
+    z-index: 4;
+}
+.tab-btns{
+    display: flex;
+    margin:0rem 4rem;
+
+}
+.tab-btn{
+    transform: translate(0%,20%);
+    background-color: #C0C0C0;
+    width: 12rem;
+    border-radius: .5rem;
+    padding: .5rem;
+
+    position: relative;
+    z-index: 3;
+}
+.tab-isActive{
+    transform: translate(0%,20%);
+    background-color: white;
+    width: 12rem;
+    border-radius: .5rem;
+    padding: .5rem;
+
+    position: relative;
+    z-index: 2;
+}
+.tab-btns button{
+    all: unset;
+    margin: .5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+}
+
+/* Search Bar */
+.search-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: .5rem;
+    margin: 1rem;
+    
+}
+.search-bar input {
+    background-color: #C0C0C0;
+    width: 80%;
+    padding: .60rem;
+    border-radius: .5rem;
+}
+.search-bar button{
+    all: unset;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: .2rem;
+    padding: .2rem;
+}
+
+/* Table */
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.item-table-container{
+    display: flex;
+    justify-content: center;
+}
+.item-table thead{
+    background-color: #780B0B;
+    border: 2px solid black;
+    color: white;
+    font-size: 1.25rem;
+
+}
+.item-table thead tr th{
+    border: 2px solid black;
+    padding: .75rem 8rem .75rem;
+}
