@@ -1,8 +1,9 @@
 //Pages
-// import HomePage from "./pages/HomePage";
-// import ArmoryPage from "./pages/ArmoryPage";
-// import LoginPage from "./pages/Login";
+import HomePage from "./pages/HomePage";
+import ArmoryPage from "./pages/ArmoryPage";
+import LoginPage from "./pages/Login";
 import AboutUsPage from "./pages/AboutUsPage";
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 //Components
 import Navbar from "./components/NavBar";
 //Styles
@@ -12,14 +13,16 @@ import "../src/App.css";
 function App(){
 
   return(
-    <>
+    <BrowserRouter>
       <Navbar/>
-      {/* <HomePage/> */}
-      {/* <ArmoryPage/> */}
-      {/* <LoginPage/> */}
-      <AboutUsPage/>
+        <Routes>
+          <Route path="/" element={<HomePage/>}/>
+          <Route path="/armory" element={<ArmoryPage/>}/>
+          <Route path="/aboutus" element={<AboutUsPage/>}/>
+          <Route path="/login" element={<LoginPage/>}/>
+        </Routes>
       <Footer/>
-    </>
+    </BrowserRouter>
     
   )
 }
