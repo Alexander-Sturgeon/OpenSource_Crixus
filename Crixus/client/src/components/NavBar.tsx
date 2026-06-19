@@ -8,7 +8,6 @@ import Logo from "../assets/LogoPlaceholder.png";//Default Image (Replace later)
 import { useState } from "react";
 
 //Side Bar
-//<Link to="/about">About</Link>git 
 function Navbar(){
     const [toggle, setToggle] = useState(false);
 
@@ -19,8 +18,6 @@ function Navbar(){
                 <button className="nav-drawer" onClick={() => setToggle(!toggle)}>
                     <img src={drawerIcon} alt="Drawer Icon"/>
                 </button>
-                
-                
                 {/* <a>{isUser ?? User.name : Login}</a> */}
                 <p className="username-or-login">Login</p>
             </div>
