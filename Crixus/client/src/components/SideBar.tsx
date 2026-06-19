@@ -1,6 +1,7 @@
 import "../styles/NavBar.css"
 import SettingsIcon from "../assets/SettingsIcon.png";
 import IconPlaceholder from "../assets/HomeIconPlaceHolder.png";
+import { Link } from "react-router-dom";
 
 function Sidebar(){
     return(
@@ -8,43 +9,49 @@ function Sidebar(){
             <ul>
                 <li>
                     <button >
-                       <img src={IconPlaceholder} alt="Homepage Icon"/> 
+                        <Link to='/'>
+                            <img src={IconPlaceholder} alt="Homepage Icon"/>
+                        </Link>
                     </button>
-                    
                     <p>Home</p>
                 </li>
                 <li>
                     <button>
-                        <img src={IconPlaceholder} alt="Fighters Icon"/>
+                        <Link to='/'>
+                            <img src={IconPlaceholder} alt="Fighters Icon"/>
+                        </Link>
                     </button>
-                    
                     <p>Fighters</p>
                 </li>
                 <li>
                     <button>
-                        <img src={IconPlaceholder} alt="Armory Icon"/>
+                        <Link to='/armory'>
+                            <img src={IconPlaceholder} alt="Armory Icon"/>
+                        </Link>
                     </button>
-                    
+
                     <p>Armory</p>
                 </li>
                 <li>
                     <button>
-                        <img src={IconPlaceholder} alt="Arena Icon"/>
+                        <Link to='/'>
+                            <img src={IconPlaceholder} alt="Arena Icon"/>
+                        </Link>
                     </button>
-                    
                     <p>Arena</p>
                 </li>
                 <li>
                     <button>
-                        <img src={IconPlaceholder} alt="About Us Icon"/>
+                        <Link to='/aboutus'>
+                            <img src={IconPlaceholder} alt="About Us Icon"/>
+                        </Link>
                     </button>
-                    
                     <p>About Us</p>
                 </li>
             </ul>
             <div className="side-bar-user">
                 <img src={SettingsIcon} alt="Settings Icon"></img>
-                <p>Login</p>
+                <Link to='/login'><p>Login</p></Link>
             </div>
         </div>
         
