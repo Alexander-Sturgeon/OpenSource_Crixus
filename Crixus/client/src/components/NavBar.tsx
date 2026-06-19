@@ -8,7 +8,7 @@ import Logo from "../assets/LogoPlaceholder.png";//Default Image (Replace later)
 import { useState } from "react";
 
 //Side Bar
-
+//<Link to="/about">About</Link>git 
 function Navbar(){
     const [toggle, setToggle] = useState(false);
 
