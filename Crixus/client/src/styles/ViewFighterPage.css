@@ -1,0 +1,27 @@
+.fighter-selected-body{
+    background-color: #C0C0C0;
+}
+.fighter-card-btn{
+    all: unset;
+    cursor: pointer;
+}
+.fighter-list{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+
+
+/* FighterCard */
+.fightercard-body{
+    background-color: #C0C0C0;
+    border-radius: 3rem 3rem 0 0;
+    padding: 1rem;
+    border: 2px solid black;
+    box-shadow: .25rem .25rem .5rem rgba(0, 0, 0, .5);
+}
+.fightercard-image{
+    width: 200px;
+    height: 200px;
+}
