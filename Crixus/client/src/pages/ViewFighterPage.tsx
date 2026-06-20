@@ -9,11 +9,16 @@ import testFighter2 from "../data/TestFighterTwo";
 //Components
 import FighterCard from "../components/FighterCard";
 import { Link } from "react-router-dom";
+import ItemRarityRendered from "../utility/ItemRarityRendered";
+//Data
+
 
 function FightersView(){
     const [fighterCount, setFighterCount] = useState(0);
     const [selectedToggle, setSelectedToggle] = useState(false)
     const [selectedFighter, setSelectedFighter] = useState<Fighter | null>();
+    const fighterWeapon = selectedFighter?.weaponId;
+    const fighterArmor = selectedFighter?.armourId;
 
     //DEFAULTS WITH A TEST FIGHTER REMOVE LATER
     const [fighters, setFighters] = useState<Fighter[]>([testFighter,testFighter2]);
@@ -40,7 +45,6 @@ function FightersView(){
                             <div className="fighter-selected-section">
                                 <h3>Fighter selected</h3>
                                 <div className="fighter-selected">
-                                    
                                     <div className="fighter-selected-details-view">
                                         <div className="fighter-image-box"><img src={selectedFighter?.appearance} alt="Fighter Image"/></div>
                                         <div className="fighter-selected-details">
@@ -72,27 +76,23 @@ function FightersView(){
                                                     <p>{selectedFighter?.intelligence}</p>
                                                 </div>
                                             </div>
+                                            <div className="fighter-items">
+                                                <div className="fighter-wpn" style={{backgroundColor: ItemRarityRendered(fighterWeapon?.rarity)}}>
+                                                    <img src={fighterWeapon?.appearance} alt="Fighters Weapon Image" title={fighterWeapon?.name}/>
+                                                </div>
+                                                <div className="fighter-armor" style={{backgroundColor: ItemRarityRendered(fighterArmor?.rarity)}}>
+                                                    <img src={fighterArmor?.appearance} alt="Fighters Armor Image" title={fighterArmor?.name}/>
+                                                </div>
+                                            </div>
                                             
-                                            <div className="fighter-wpn">
-                                                {/* Run a get on weapon by selectedFighter.weaponId */}
-                                            </div>
-                                            <div className="fighter-armor">
-                                                {/* Run a get on a armor by selectedFighter.armorId */}
-                                            </div>
-                                        </div>
-                                        
+                                        </div>                            
                                     </div>
-
-                                    
                                 </div>   
                             </div>
-                            
                         }      
                     </div>
-                    
                 </div>
             </div>
-            
             <div className="fighter-edt-dlt-btns">
                 <button className="fighter-edit-btn">
                     Edit Fighter

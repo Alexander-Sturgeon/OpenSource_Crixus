@@ -4,10 +4,9 @@ import Fighter from "../data/Fighter";
   import User from "../data/User";
   import Team from "../data/Team";
 
-  const testWeapon = new Weapon(1, 42, "Spear", "A bronze-tipped spear worn from battle", "Gaius's Lance", 350, 3);
+  const testWeapon = new Weapon(1, 42, "Spear", "/weapons/swordOne.png", "Gaius's Lance", 350, 1);
 
-  const testArmour = new Armour(1, "Legionnaire Shield", "A dented round shield bearing a faded eagle", 30, "Shield",
-  220, 2);
+  const testArmour = new Armour(1, "Legionnaire Helmet", "/armor/helmetOne.png", 30, "Helmet", 220, 2);
 
   const testUser = new User(1, "Alexander", "Sturgeon", "hunter2", new Date("1999-04-12"), 1500, "alex_gladiator", 1);
 
