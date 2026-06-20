@@ -27,62 +27,72 @@ function FightersView(){
     }
     return(
         <section className="fighters-view">
-            <div className="fighter-detail">
+            <div className="fighters-view-upper">
                 <div className="fighters-count-display">
                     <h2>Fighters</h2>
                     <h3>{fighterCount}/4</h3>
                 </div>
-                <div className="fighter-selected-body">
-                    {!selectedToggle ? 
-                        <div><p>Select a fighter or create a new fighter below.</p></div> 
-                        :
-                        <div className="fighter-selected">
-                            <h3>Fighter selected</h3>
-                            <div className="fighter-selected-details-view">
-                                <div><img src={selectedFighter?.appearance} alt="Fighter Image"/></div>
-                                <div className="fighter-selected-details">
-                                    <div className="fighter-name-pay">
-                                        <p>First Name: {selectedFighter?.first_name}</p>
-                                        <p>Last Name: {selectedFighter?.last_name}</p>
-                                        <p>Salary: {selectedFighter?.salary}</p>
-                                    </div>
-                                    <div className="fighter-attributes">
-                                        <div className="fighter-str">
-                                            <h3>STR</h3>
-                                            <p>{selectedFighter?.strength}</p>
-                                        </div>
-                                        <div className="fighter-dex">
-                                            <h3>DEX</h3>
-                                            <p>{selectedFighter?.dexterity}</p>
-                                        </div>
-                                    </div>
-                                    <div className="fighter-attributes">
-                                        <div className="fighter-con">
-                                            <h3>CON</h3>
-                                            <p>{selectedFighter?.constitution}</p>
-                                        </div>
-                                        <div className="fighter-int">
-                                            <h3>INT</h3>
-                                            <p>{selectedFighter?.intelligence}</p>
-                                        </div>
-                                    </div>
+                <div className="fighter-detail">
+                    <div className="fighter-selected-body">
+                        {!selectedToggle ? 
+                            <div><p>Select a fighter or create a new fighter below.</p></div> 
+                            :
+                            <div className="fighter-selected-section">
+                                <h3>Fighter selected</h3>
+                                <div className="fighter-selected">
                                     
-                                    <div className="fighter-wpn">
-                                        {/* Run a get on weapon by selectedFighter.weaponId */}
+                                    <div className="fighter-selected-details-view">
+                                        <div className="fighter-image-box"><img src={selectedFighter?.appearance} alt="Fighter Image"/></div>
+                                        <div className="fighter-selected-details">
+                                            <div className="fighter-name-pay">
+                                                <p className="fighter-atr-label">First Name</p>
+                                                <p className="fighter-atr-value">{selectedFighter?.first_name}</p>
+                                                <p className="fighter-atr-label">Last Name</p>
+                                                <p className="fighter-atr-value">{selectedFighter?.last_name}</p>
+                                                <p className="fighter-atr-label">Salary</p>
+                                                <p className="fighter-atr-value">{selectedFighter?.salary}</p>
+                                            </div>
+                                            <div className="fighter-attributes">
+                                                <div className="fighter-str">
+                                                    <h3>STR</h3>
+                                                    <p>{selectedFighter?.strength}</p>
+                                                </div>
+                                                <div className="fighter-dex">
+                                                    <h3>DEX</h3>
+                                                    <p>{selectedFighter?.dexterity}</p>
+                                                </div>
+                                            </div>
+                                            <div className="fighter-attributes">
+                                                <div className="fighter-con">
+                                                    <h3>CON</h3>
+                                                    <p>{selectedFighter?.constitution}</p>
+                                                </div>
+                                                <div className="fighter-int">
+                                                    <h3>INT</h3>
+                                                    <p>{selectedFighter?.intelligence}</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div className="fighter-wpn">
+                                                {/* Run a get on weapon by selectedFighter.weaponId */}
+                                            </div>
+                                            <div className="fighter-armor">
+                                                {/* Run a get on a armor by selectedFighter.armorId */}
+                                            </div>
+                                        </div>
+                                        
                                     </div>
-                                    <div className="fighter-armor">
-                                        {/* Run a get on a armor by selectedFighter.armorId */}
-                                    </div>
-                                </div>
-                                
-                            </div>
 
+                                    
+                                </div>   
+                            </div>
                             
-                        </div> 
-                    }      
+                        }      
+                    </div>
+                    
                 </div>
-                
             </div>
+            
             <div className="fighter-edt-dlt-btns">
                 <button className="fighter-edit-btn">
                     Edit Fighter
