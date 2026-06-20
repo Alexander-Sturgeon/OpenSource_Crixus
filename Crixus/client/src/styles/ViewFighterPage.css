@@ -1,9 +1,64 @@
+.fighter-detail{
+    display: flex;
+    justify-self: center;
+}
 .fighter-selected-body{
     background-color: #C0C0C0;
+    margin: 1rem;
+    justify-self: center;
+    border-radius: 1rem;
+    border: 2px solid black;
+    box-shadow: .5rem .5rem .25rem rgba(0, 0, 0, .3);
+    padding: .75rem;
+}
+.fighters-count-display{
+    color:white;
+    justify-items: center;
+    font-size: 2rem;
+}
+.fighter-selected h3{
+    font-size: 2rem;
+}
+.fighter-selected-details-view{
+    display: flex;
+    padding: 2rem;
+}
+.fighter-selected-details-view div img{
+    width: 400px;
+    height: 600px;
+}
+.fighter-selected-details{
+    display: flex;
+    flex-direction: column;
+}
+.fighter-name-pay{
+    justify-items: center;
+}
+.fighter-name-pay p{
+    font-size: 1.5rem;
+    padding: .4rem;
+    background-color: #565656;
+    color: white;
+    border-radius: .25rem;
+    width: 10rem;
+}
+.fighter-attributes{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin: 1rem;
+}
+.fighter-str, .fighter-dex, .fighter-con, .fighter-int{
+    background-color: #565656;
+    color: white;
+    padding: 1rem;
+    justify-items: center;
+    border-radius: 2rem;
 }
 .fighter-card-btn{
     all: unset;
     cursor: pointer;
+    margin-top: 2rem;
 }
 .fighter-list{
     display: flex;
@@ -11,6 +66,45 @@
     justify-content: center;
 }
 
+.fighter-edt-dlt-btns{
+    display: flex;
+    justify-self: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.fighter-edt-dlt-btns button{
+    all: unset;
+    background-color: #C0C0C0;
+    padding: .5rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border: 4px solid black;
+    border-radius: .5rem;
+}
+.fighter-delete-btn:hover{
+    color: red;
+}
+.fighter-edit-btn:hover{
+    color: green;
+}
+.fighter-new-contain{
+    justify-self: center;
+}
+.fighter-new-btn{
+    width: 20rem;
+    height: 3rem;
+    margin: 2rem;
+    border: 4px solid #FFD700;
+    background-color: #460F3D;
+    align-items: center;
+}
+.fighter-link{
+    all: unset;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+    align-self: center;
+}
 
 
 /* FighterCard */
@@ -24,4 +118,8 @@
 .fightercard-image{
     width: 200px;
     height: 200px;
+}
+.fightercard-details{
+    border: 2px solid black;
+    justify-items: center;
 }

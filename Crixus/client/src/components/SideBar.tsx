@@ -17,7 +17,7 @@ function Sidebar(){
                 </li>
                 <li>
                     <button>
-                        <Link to='/'>
+                        <Link to='/fighters'>
                             <img src={IconPlaceholder} alt="Fighters Icon"/>
                         </Link>
                     </button>
