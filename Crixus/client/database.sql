@@ -47,6 +47,8 @@ CREATE TABLE IF NOT EXISTS `crixus`.`User` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+INSERT INTO user(user_id, first_name, last_name, password, email, birth_date, wallet_gold, username, Team_team_id)
+VALUES (1, "kenneth", "barclay", "12345", "kdb.worker.bee@gmail.com", "1997-06-02", 12, "big_boy12000", 23);
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Weapon`
