@@ -6,7 +6,8 @@ const PORT = 3000;
 
 //Import route files
 import userSettings from "./routes/user_settings";
-
+import armory from  "./routes/armoury";
+import home from "./routes/home";
 //cors allows requests from other origins
 //express.json parses json request bodies so req.body works. 
 app.use(cors());
@@ -22,6 +23,10 @@ app.get("/gur",(req,res) =>{
 });
 
 app.use("/users", userSettings);
+
+app.use("/armory", armory);
+
+app.use("/home", home);
 
 //starts server
 app.listen(PORT,() =>{
