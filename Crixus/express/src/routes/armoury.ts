@@ -10,5 +10,9 @@ router.get("/api/armor", async(_req: Request, res: Response) => {
     res.json(rows);
 });
 
-
+//Gets all weapons
+router.get("/api/weapon", async(_req: Request, res: Response) => {
+    const [rows] = await pool.query("SELECT * FROM weapon");
+    res.json(rows);
+});
 export default router;
