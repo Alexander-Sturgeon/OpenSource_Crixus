@@ -23,7 +23,6 @@ CREATE TABLE IF NOT EXISTS `crixus`.`Team` (
   PRIMARY KEY (`team_id`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
 -- Table `mydb`.`User`
 -- -----------------------------------------------------
@@ -47,14 +46,13 @@ CREATE TABLE IF NOT EXISTS `crixus`.`User` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
 -- Table `mydb`.`Weapon`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `crixus`.`Weapon` (
   `weapon_id` INT NOT NULL,
   `name` VARCHAR(100) NOT NULL,
-  `appearance` VARCHAR(60) NULL,
+  `appearance` VARCHAR(200) NULL,
   `damage` INT NOT NULL,
   `type` VARCHAR(45) NULL,
   `price` DOUBLE NULL,
@@ -62,21 +60,19 @@ CREATE TABLE IF NOT EXISTS `crixus`.`Weapon` (
   PRIMARY KEY (`weapon_id`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
 -- Table `mydb`.`Armour`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `crixus`.`Armour` (
   `armour_id` INT NOT NULL,
   `name` VARCHAR(100) NOT NULL,
-  `appearance` VARCHAR(60) NULL,
+  `appearance` VARCHAR(200) NULL,
   `damage_protection` INT NOT NULL,
   `type` VARCHAR(50) NULL,
   `price` DOUBLE NULL,
   `rarity` INT NULL,
   PRIMARY KEY (`armour_id`))
 ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Fighter`
@@ -85,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `crixus`.`Fighter` (
   `fighter_id` INT NOT NULL,
   `first_name` VARCHAR(50) NOT NULL,
   `last_name` VARCHAR(50) NULL,
-  `appearance` VARCHAR(60) NULL,
+  `appearance` VARCHAR(300) NULL,
   `strength` INT NULL,
   `dexterity` INT NULL,
   `constitution` INT NULL,
@@ -122,7 +118,6 @@ CREATE TABLE IF NOT EXISTS `crixus`.`Fighter` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
 -- Table `mydb`.`Battle`
 -- -----------------------------------------------------
@@ -131,8 +126,7 @@ CREATE TABLE IF NOT EXISTS `crixus`.`Battle` (
   `battle_date` DATE NULL,
   PRIMARY KEY (`battle_id`))
 ENGINE = InnoDB;
-
-
+       
 -- -----------------------------------------------------
 -- Table `mydb`.`Team_has_Battle`
 -- -----------------------------------------------------
@@ -156,7 +150,6 @@ CREATE TABLE IF NOT EXISTS `crixus`.`Team_has_Battle` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
 -- Table `mydb`.`Fighter_has_Battle`
 -- -----------------------------------------------------
@@ -164,6 +157,7 @@ CREATE TABLE IF NOT EXISTS `crixus`.`Fighter_has_Battle` (
   `Fighter_fighter_id` INT NOT NULL,
   `Battle_battle_id` INT NOT NULL,
   `result` BINARY NULL,
+  `winnings_gold` DOUBLE NULL,
   PRIMARY KEY (`Fighter_fighter_id`, `Battle_battle_id`),
   INDEX `fk_Fighter_has_Battle_Battle1_idx` (`Battle_battle_id` ASC) VISIBLE,
   INDEX `fk_Fighter_has_Battle_Fighter1_idx` (`Fighter_fighter_id` ASC) VISIBLE,
