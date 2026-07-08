@@ -25,12 +25,12 @@ function Sidebar(){
                 </li>
                 <li>
                     <button>
-                        <Link to='/armory'>
-                            <img src={IconPlaceholder} alt="Armory Icon"/>
+                        <Link to='/armoury'>
+                            <img src={IconPlaceholder} alt="Armoury Icon"/>
                         </Link>
                     </button>
 
-                    <p>Armory</p>
+                    <p>Armoury</p>
                 </li>
                 <li>
                     <button>
