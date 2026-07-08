@@ -12,9 +12,9 @@ function HomePage(){
             </div>
             {/* Item Display */}
             <div className="home-tool-highlights">
+                {/* <ItemCard/>
                 <ItemCard/>
-                <ItemCard/>
-                <ItemCard/>
+                <ItemCard/> */}
             </div>
         </div>
     )
