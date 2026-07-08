@@ -3,7 +3,7 @@ import ItemCard from "./ItemCard";
 import {useState, useEffect} from 'react';
 import type Armour from "../data/Armour";
 //Styles
-import "../styles/Armory.css";
+import "../styles/Armoury.css";
 import "../styles/HomePage.css";
 
 function ArmoryTab(){
