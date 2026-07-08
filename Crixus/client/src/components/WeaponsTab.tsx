@@ -1,13 +1,23 @@
+import { useState, useEffect } from "react";
 import ItemCard from "./ItemCard";
+import type Weapon from "../data/Weapon";
 
-function ArmoryTab(){
+function WeaponsTab(){
+    const [weapons, setWeapons] =  useState<Weapon[]>([]);
+    useEffect(() => {
+        fetch("http://localhost:3000/armory/api/weapon")
+            .then((res) => res.json())
+            .then((data:Weapon[]) => setWeapons(data))
+            .catch((err) => console.error("Weapons failed to fetch.", err));
+    }, []);
 
     return(
         <div>
             <div className="home-tool-highlights">
-                <ItemCard/>
-                <ItemCard/>
-                <ItemCard/>
+                {weapons.slice(0,3).map((weapon) => (
+                    <ItemCard key={weapon.weapon_id} item={weapon}/>
+                ))}
+
             </div>
             <div className="item-table-container">
                 <table className="item-table">
@@ -20,20 +30,23 @@ function ArmoryTab(){
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        {weapons.map((weapon)=>(
+                          <tr key={weapon.weapon_id}>
                             <td>
-                                <p>test</p>
+                                <p>{weapon.name}</p>
                             </td>
                             <td>
-                                <p>test</p>
+                                <p>{weapon.type}</p>
                             </td>
                             <td>
-                                <p>test</p>
+                                <p>{weapon.damage}</p>
                             </td>
                             <td>
-                                <p>test</p>
+                                <p>{weapon.price}</p>
                             </td>
-                        </tr>
+                        </tr>  
+                        ))}
+                        
                     </tbody>
                 </table>
             </div>
@@ -41,4 +54,4 @@ function ArmoryTab(){
     )
 }
 
-export default ArmoryTab;
+export default WeaponsTab;

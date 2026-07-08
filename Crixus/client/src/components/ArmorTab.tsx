@@ -1,18 +1,25 @@
 //Components
 import ItemCard from "./ItemCard";
-
+import {useState, useEffect} from 'react';
+import type Armour from "../data/Armour";
 //Styles
 import "../styles/Armory.css";
 import "../styles/HomePage.css";
 
 function ArmoryTab(){
-
+    const [armour, setArmour] =  useState<Armour[]>([]);
+    useEffect(() => {
+        fetch("http://localhost:3000/armory/api/armor")
+            .then((res) => res.json())
+            .then((data:Armour[]) => setArmour(data))
+            .catch((err) => console.error("Armour failed to fetch.", err));
+    }, []);
     return(
         <div>
             <div className="home-tool-highlights">
-                <ItemCard/>
-                <ItemCard/>
-                <ItemCard/>
+                {armour.slice(0,3).map((armour) => (
+                    <ItemCard key={armour.armourId} item={armour}/>
+                ))}
             </div>
             <div className="item-table-container">
                 <table className="item-table">
@@ -25,20 +32,22 @@ function ArmoryTab(){
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        {armour.map((armour)=>(
+                          <tr key={armour.armourId}>
                             <td>
-                                <p>test</p>
+                                <p>{armour.name}</p>
                             </td>
                             <td>
-                                <p>test</p>
+                                <p>{armour.type}</p>
                             </td>
                             <td>
-                                <p>test</p>
+                                <p>{armour.damage_protection}</p>
                             </td>
                             <td>
-                                <p>test</p>
+                                <p>{armour.price}</p>
                             </td>
-                        </tr>
+                        </tr>  
+                        ))}
                     </tbody>
                     
                 </table>
