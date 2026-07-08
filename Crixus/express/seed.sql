@@ -12,13 +12,13 @@ VALUES (1, "kenneth", "barclay", "12345", "kdb.worker.bee@gmail.com", "1997-06-0
 
 -- initialize weapon table
 INSERT INTO weapon(weapon_id, name, appearance, damage, type, price, rarity)
-VALUES (1, "The Blood Dagger", "Small blade with red stripes running down the sides", 20, "Blade", 500, 6),
-	   (2, "Jason's Spear", "Spear once owned by gladiator champion Jason Dor Ulo", 15, "Spear", 300, 4);
+VALUES (1, "The Blood Dagger", "/weapon/swordOne.png", 20, "Blade", 500, 2),
+	   (2, "Jason's Spear", "/weapon/spearOne.png", 15, "Spear", 300, 3);
 
 -- initialize armour table
 INSERT INTO armour(armour_id, name, appearance, damage_protection, type, price, rarity)
-VALUES (1, "Helmet of Rome", "Roman legionaire helmet", 10, "helmet", 200, 2),
-       (2, "Obsidian Shield of the Forgotten", "Some say this massive shield could stop even the mightiest warrior", 25, "shield", 1000, 10);
+VALUES (1, "Helmet of Rome", "/armor/helmetOne.png", 10, "helmet", 200, 2),
+       (2, "Obsidian Shield of the Forgotten", "/armor/shieldOne.png", 25, "shield", 1000, 1);
 
 -- initialize the fighter table
 INSERT INTO fighter(fighter_id, first_name, last_name, appearance, strength, dexterity, constitution, intelligence, salary, Weapons_weapon_id, Armour_armour_id, User_user_id, Team_team_id)
