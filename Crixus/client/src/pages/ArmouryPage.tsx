@@ -4,15 +4,18 @@ import ArmorTab from "../components/ArmourTab";
 //Styles
 import "../styles/Armoury.css";
 //Logic
-import { useState } from "react";
+import { useState, startTransition } from "react";
 
 
 function ArmoryPage(){
     const [page, setPage] = useState(true);
     const [tabColor, setTabColor] = useState(true);
     function pageChange(toggle:boolean){
-        setPage(toggle)
-        setTabColor(toggle)
+        startTransition(() => {
+            setPage(toggle)
+            setTabColor(toggle)
+        });
+        
     }
     return(
         <section>
