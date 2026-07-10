@@ -14,7 +14,7 @@ function getRandomInt(min: number, max: number): number{
 function simulate_fight(fighterA: Fighter, fighterB: Fighter): string{
     let fighterAResult: number = (fighterA.strength + fighterA.modifier + fighterA.attack) - fighterB.defense;
     
-    let fighterBResult: number = (fighterB.strength + fighterB.modifier + fighterB.attack) - fighterB.defense;
+    let fighterBResult: number = (fighterB.strength + fighterB.modifier + fighterB.attack) - fighterA.defense;
 
     if(fighterAResult > fighterBResult){
         return `${fighterA.name} is victorious.\n${fighterA.name}: ${fighterAResult}\n${fighterB.name}: ${fighterBResult}`
@@ -29,7 +29,7 @@ function simulate_fight(fighterA: Fighter, fighterB: Fighter): string{
 const fighterA: Fighter = {
     name: "Tom",
     strength: 10,
-    modifier: getRandomInt(1,6),
+    modifier: getRandomInt(1,20),
     attack: 1,
     defense: 5
 }
@@ -37,7 +37,7 @@ const fighterA: Fighter = {
 const fighterB: Fighter = {
     name: "Peter",
     strength: 5,
-    modifier: getRandomInt(1,6),
+    modifier: getRandomInt(1,20),
     attack: 6,
     defense: 1
 }
