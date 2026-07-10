@@ -9,6 +9,7 @@ import userSettings from "./routes/user_settings";
 import armoury from  "./routes/armoury";
 import home from "./routes/home";
 import fighters from "./routes/view_fighters";
+import addFighters from "./routes/add_fighters";
 //cors allows requests from other origins
 //express.json parses json request bodies so req.body works. 
 app.use(cors());
@@ -29,8 +30,9 @@ app.use("/armory", armoury);
 
 app.use("/home", home);
 
-app.use("/fighters", fighters)
+app.use("/fighters", fighters);
 
+app.use("/api/newfighters", addFighters);
 //starts server
 app.listen(PORT,() =>{
     console.log(`Server runing on port ${PORT}`);

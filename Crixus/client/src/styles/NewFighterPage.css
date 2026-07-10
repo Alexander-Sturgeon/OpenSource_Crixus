@@ -1,0 +1,98 @@
+.new-fighter-body{
+    margin: .5rem;
+    padding: 1rem;
+    border-radius: .25rem;
+    background-color: #C0C0C0;
+}
+.new-fighter-body form{
+    display: flex;
+    gap: 2rem;
+}
+.new-fighter-form{
+    padding: 1rem;
+}
+.new-fighter-img{
+    display: flex;
+    flex-direction: column;
+}
+.new-fighter-img label{
+    font-size: 1.65rem;
+    margin-bottom: .75rem;
+}
+.new-fighter-img select{
+    height: 1.75rem;
+    font-size: 1.2rem;
+    border-radius: .25rem;
+}
+.fighter-preview{
+    margin-top: 2rem;
+    height: 15rem;
+    width: 10rem;
+    background-color: grey;
+    border-radius: .25rem;
+    padding: .2rem;
+    border: 2px solid black;
+    align-self: center;
+}
+.fighter-names{
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+.fighter-names label{
+    margin-bottom: .25rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+.fighter-names input{
+
+    border-radius: .2rem;
+    height: 2rem;
+}
+.point-pool{
+    font-size: 1.5rem;
+    background-color: #ffffff;
+    border-radius: .5rem;
+    padding: .75rem;
+    border: 2px solid black;
+}
+.stat-Group-One, .stat-Group-Two{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.stat-Group-One label{
+    flex: 6;
+}
+.stat-Group-One input{
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+.stat-Group-Two label{
+    flex: 6;
+}
+.stat-Group-Two input{
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+.stat-label{
+    margin: .75rem;
+    font-size: 1.4rem;
+}
+.stat-input{
+    width: 4rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: .25rem;
+    background-color: #e3e0e0;
+}
+.new-fighter-submit{
+    margin: 1rem;
+    text-align: center;
+}
+.new-fighter-submit button{
+    border-radius: .2rem;
+    padding: .5rem;
+}
