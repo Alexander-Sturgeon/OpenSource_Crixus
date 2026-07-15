@@ -1,6 +1,6 @@
 //Pages
 import HomePage from "./pages/HomePage";
-import ArmouryPage from "./pages/ArmouryPage";
+import ArmoryPage from "./pages/ArmoryPage";
 import LoginPage from "./pages/Login";
 import AboutUsPage from "./pages/AboutUsPage";
 import ViewFighterPage from "./pages/ViewFighterPage";
@@ -21,7 +21,7 @@ function App(){
       <Navbar/>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
-          <Route path="/armoury" element={<ArmouryPage/>}/>
+          <Route path="/armory" element={<ArmoryPage/>}/>
           <Route path="/aboutus" element={<AboutUsPage/>}/>
           <Route path="/login" element={<LoginPage/>}/>
           <Route path="/fighters" element={<ViewFighterPage/>}/>

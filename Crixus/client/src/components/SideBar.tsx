@@ -1,6 +1,7 @@
 import "../styles/NavBar.css"
 import SettingsIcon from "../assets/SettingsIcon.png";
-import IconPlaceholder from "../assets/HomeIconPlaceHolder.png";
+// import IconPlaceholder from "../assets/HomeIconPlaceHolder.png";
+import { HomeIcon, ShieldIcon, ColosseumIcon, AboutIcon, SpartanHelmetIcon } from "./Icons";
 import { Link } from "react-router-dom";
 
 function Sidebar(){
@@ -10,7 +11,7 @@ function Sidebar(){
                 <li>
                     <button >
                         <Link to='/'>
-                            <img src={IconPlaceholder} alt="Homepage Icon"/>
+                            <HomeIcon className="side-bar-icon" aria-label="Homepage Icon" />
                         </Link>
                     </button>
                     <p>Home</p>
@@ -18,15 +19,15 @@ function Sidebar(){
                 <li>
                     <button>
                         <Link to='/fighters'>
-                            <img src={IconPlaceholder} alt="Fighters Icon"/>
+                            <SpartanHelmetIcon className="side-bar-icon" aria-label="Fighter Icon" />
                         </Link>
                     </button>
                     <p>Fighters</p>
                 </li>
                 <li>
                     <button>
-                        <Link to='/armoury'>
-                            <img src={IconPlaceholder} alt="Armoury Icon"/>
+                        <Link to='/armory'>
+                            <ShieldIcon className="side-bar-icon" aria-label="Armory Icon" />
                         </Link>
                     </button>
 
@@ -35,7 +36,7 @@ function Sidebar(){
                 <li>
                     <button>
                         <Link to='/arena'>
-                            <img src={IconPlaceholder} alt="Arena Icon"/>
+                            <ColosseumIcon className="side-bar-icon" aria-label="Colosseum Icon" />
                         </Link>
                     </button>
                     <p>Arena</p>
@@ -43,7 +44,7 @@ function Sidebar(){
                 <li>
                     <button>
                         <Link to='/aboutus'>
-                            <img src={IconPlaceholder} alt="About Us Icon"/>
+                            <AboutIcon className="side-bar-icon" aria-label="About Us Icon" />
                         </Link>
                     </button>
                     <p>About Us</p>
