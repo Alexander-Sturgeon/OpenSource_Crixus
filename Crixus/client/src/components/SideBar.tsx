@@ -26,8 +26,8 @@ function Sidebar(){
                 </li>
                 <li>
                     <button>
-                        <Link to='/armory'>
-                            <ShieldIcon className="side-bar-icon" aria-label="Armory Icon" />
+                        <Link to='/armoury'>
+                            <ShieldIcon className="side-bar-icon" aria-label="Armoury Icon" />
                         </Link>
                     </button>
 
