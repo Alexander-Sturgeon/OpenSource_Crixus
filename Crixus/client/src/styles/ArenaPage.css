@@ -1,0 +1,126 @@
+
+.arena-select{
+    display: flex;
+    flex-direction: row;
+    background-color: #b4b2b2;
+    border-radius: .5rem;
+    margin: 1rem;
+    padding: .5rem;
+    justify-content: space-between;
+
+}
+.select-heading{
+    margin-left: 1rem;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+.arena-selections select{
+    margin: .5rem;
+    font-size: 1.2rem;
+    border-radius: .25rem;
+    border: none;
+    outline: none;
+    padding: .4rem;
+}
+.arena-selections select option{
+    font-size: .75rem;
+    font-weight: 1;
+}
+.arena-combat{
+    background-color: #C0C0C0;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: .25rem;
+}
+.arena-details{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 2rem 1rem 2rem;
+    background-color: #b4b2b2;
+    padding: .5rem;
+    border-radius: .25rem;
+}
+.details-salary, .arena-user-fighters, .arena-npc-fighters{
+    text-align: center;
+}
+.details-heading{
+    font-size: 1.75rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+.arena-fighter-display{
+    display: flex;
+    justify-content: space-evenly;
+}
+.fighter-display-row, .fighter-npc-display-row{
+    display: flex;
+    justify-content: space-around;
+    gap: .5rem;
+    background-color: #b4b2b2;
+    border-radius: .2rem;
+    padding: 0rem .5rem;
+    align-items: center;
+}
+.arena-fighter-appearance-display{
+    display: flex;
+    gap: 1rem;
+    margin: 1rem;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.appearance-vs{
+    font-size: 5rem;
+    color: rgb(192, 8, 8);
+    font-family: 'Times New Roman', Times, serif;
+}
+.appearance-placeholder{
+    height: 400px;
+    width: 300px;
+    background-color: #b4b2b2;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+
+/* OUTCOME STYLES */
+.arena-outcome{
+    margin: .5rem 2rem .5rem 2rem;
+    background-color: white;
+    border-radius: .25rem;
+    border: 10px solid rgb(255, 235, 14);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.outcome-header, h3{
+    font-size: 4rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+.outcome-items{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: .5rem;
+}
+.outcome-result h4{
+    color: green;
+    font-size: 3rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+.outcome-money{
+    display: flex;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+}
+.outcome-money, h5{
+    font-size: 1.5rem;
+}
+.outcome-item-placeholder{
+    height: 200px;
+    width: 150px;
+    background-color: #b4b2b2;
+    border-radius: 1rem;
+}

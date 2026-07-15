@@ -34,7 +34,7 @@ function Sidebar(){
                 </li>
                 <li>
                     <button>
-                        <Link to='/'>
+                        <Link to='/arena'>
                             <img src={IconPlaceholder} alt="Arena Icon"/>
                         </Link>
                     </button>
