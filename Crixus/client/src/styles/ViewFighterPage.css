@@ -17,7 +17,8 @@
     grid-column: 2;
 }
 .fighter-selected-body{
-    height: 22rem;
+    min-height: 22rem;
+    max-height: 30rem;
     width: 45rem;
     background-color: #C0C0C0;
     margin: 1rem;
