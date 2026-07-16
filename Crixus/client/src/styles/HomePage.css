@@ -1,20 +1,46 @@
 .home-main{
     /* background-color: #460F3D; */
+    background-image: url("../assets/Collesium.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 1rem;
+    border: 2px solid black;
+    margin: 1rem 0rem;
+    padding: .5rem;
     color: white;
     max-height: 1080px ;
 }
 .home-highlights{
-    border: 5px solid black;
-    background-color: #383838;
+    /* border: 5px solid black; */
+    background-color: #C0C0C06D;
+    color: black;
+    text-align: center;
     margin: 2rem 0rem 2rem;
-    height: 200px;
     border-radius: 10px;
     padding: 1rem;
 }
+.highlights-heading{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4rem;
+}
+.highlights-p{
+    font-size: 2rem;
+}
 .home-tool-highlights{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 4rem 1rem 4rem;
     gap: 8rem;
     max-height: 700px;
     display: flex;
     justify-content: center;
+}
+
+.tool-item-placeholder{
+    background-color: #C0C0C0;
+    border: 4px solid black;
+    border-radius: .5rem;
+    height: 400px;
+    width: 300px;
 }
