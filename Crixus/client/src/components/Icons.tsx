@@ -35,7 +35,7 @@ export function ShieldIcon(props: IconProps){
     )
 }
 
-//AI ASK Prof to see if its okay couldnt find a free one of these
+//AI SVG-Here but confirmed with Prof
 export function ColosseumIcon(props: IconProps){
       return(
           <svg
@@ -80,7 +80,7 @@ export function ColosseumIcon(props: IconProps){
         </svg>
     )
   }
-//AI ASK Prof to see if its okay couldnt find a free one of these
+//AI SVG-Here but confirmed with Prof
   export function SpartanHelmetIcon(props: IconProps){
       return(
           <svg
