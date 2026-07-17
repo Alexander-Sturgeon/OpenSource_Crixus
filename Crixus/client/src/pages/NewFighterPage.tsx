@@ -62,7 +62,7 @@ function NewFighterPage() {
         const elements = event.currentTarget.elements as FormElements;
         const f_name = elements.fighter_name_input.value;
         const l_name = elements.fighter_l_name_input.value;
-        const appear = "";
+        const appear = appearance;
         const str = stats.strength;
         const dex = stats.dexterity;
         const con = stats.constitution;
