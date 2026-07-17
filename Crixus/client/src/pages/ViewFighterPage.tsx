@@ -8,7 +8,7 @@ import testFighter from "../data/TestFighter";
 import testFighter2 from "../data/TestFighterTwo";
 //Components
 import FighterCard from "../components/FighterCard";
-import { Link } from "react-router-dom";
+import { data, Link } from "react-router-dom";
 import ItemRarityRendered from "../utility/ItemRarityRendered";
 //Data
 
@@ -21,7 +21,46 @@ function FightersView(){
     const fighterArmor = selectedFighter?.armourId;
 
     //DEFAULTS WITH A TEST FIGHTER REMOVE LATER
-    const [fighters, setFighters] = useState<Fighter[]>([testFighter,testFighter2]);
+    const [fighters, setFighters] = useState<Fighter[]>([]);
+    
+    
+    
+    async function loadFighters() {
+            const response = await fetch(`http://localhost:3000/fighters/users/${1}/fighters`);
+            const data: Fighter[] = await response.json();
+            setFighters(data)
+        }
+
+
+    useEffect(()=> {
+        
+        loadFighters()
+    },[1]);
+
+    
+    async function deleteFighter(id:Number) {
+        try{
+            const response = await fetch(`http://localhost:3000/fighters/fighters/${id}`, {
+                method: "DELETE"
+            })
+
+            if(!response.ok){
+                console.error("Failed to delete fighter");
+                return;
+            }
+
+            await loadFighters();
+            setSelectedFighter(null);
+            setSelectedToggle(false);
+
+        }
+        catch(err){
+            console.error(err)
+        }
+            
+    }
+    
+
 
     useEffect(() =>{
         setFighterCount(fighters.length)
@@ -97,14 +136,14 @@ function FightersView(){
                 <button className="fighter-edit-btn">
                     Edit Fighter
                 </button>
-                <button className="fighter-delete-btn">
+                <button className="fighter-delete-btn" onClick={() => selectedFighter && deleteFighter(selectedFighter?.fighterId)}>
                     Delete Fighter
                 </button>
             </div>
             <div className="fighter-list">
                 {fighters.map((fighter) =>(
-                    <button className="fighter-card-btn" style={{transform: selectedFighter?.fighterId == fighter.fighterId ? "translateY(-1rem)":"none"}} onClick={() => selectFighter(fighter)}>
-                        <FighterCard key={fighter.fighterId} fighter={fighter}/>
+                    <button key={fighter.fighterId} className="fighter-card-btn" style={{transform: selectedFighter?.fighterId == fighter.fighterId ? "translateY(-1rem)":"none"}} onClick={() => selectFighter(fighter)}>
+                        <FighterCard  fighter={fighter}/>
                     </button>
                     
                 ))}
