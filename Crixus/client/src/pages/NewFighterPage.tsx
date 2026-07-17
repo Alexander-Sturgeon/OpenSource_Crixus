@@ -71,7 +71,7 @@ function NewFighterPage() {
         const weapon = 1; //Default Weapon id
         const armour = 1; //Default Armour id
         const user = 1; //Default User id
-        const team= 23; //BIG LADs team is the Default
+        const team= 1; //BIG LADs team is the Default
         try{
             //Try creating a NewFighter with the data.
             const createdFighter: NewFighter ={
