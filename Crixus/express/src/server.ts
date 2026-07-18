@@ -35,7 +35,7 @@ app.use("/fighters", fighters);
 
 app.use("/api/newfighters", addFighters);
 
-app.use("/api/edit/:id", editFighters)
+app.use("/api/editFighters", editFighters)
 //starts server
 app.listen(PORT,() =>{
     console.log(`Server runing on port ${PORT}`);

@@ -2,9 +2,6 @@ import "../styles/EditFighterPage.css";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-function GetFighterId(){
-    const {id} = useParams();
-}
 
 interface EditFighter{
     fighter_id: number;
@@ -32,6 +29,7 @@ const fightersImg =[
 ]
 
 function EditFighterPage(){
+    const {id} = useParams();
 
 }
 
@@ -40,7 +38,7 @@ async function EditFighter(updated_fighter: EditFighter){
     try{
         console.log("attempt to call PUT on api");
         const res = await
-        fetch(`http://localhost:3000/api/updateFighter/edit/${updated_fighter.fighter_id}`, {
+        fetch(`http://localhost:3000/api/editFighters/edit/${updated_fighter.fighter_id}`, {
             method: "PUT",
             headers: {
                 'Accept': 'application/json',
@@ -55,3 +53,5 @@ async function EditFighter(updated_fighter: EditFighter){
         console.log("There was an error updating fighter: ", err);
     }
 }
+
+export default EditFighterPage;
