@@ -5,6 +5,8 @@ import LoginPage from "./pages/Login";
 import AboutUsPage from "./pages/AboutUsPage";
 import ViewFighterPage from "./pages/ViewFighterPage";
 import NewFighterPage from "./pages/NewFighterPage";
+import ArenaPage from "./pages/ArenaPage";
+
 import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 //Components
 import Navbar from "./components/NavBar";
@@ -24,6 +26,7 @@ function App(){
           <Route path="/login" element={<LoginPage/>}/>
           <Route path="/fighters" element={<ViewFighterPage/>}/>
           <Route path="/newfighter" element={<NewFighterPage/>}/>
+          <Route path="/arena" element={<ArenaPage/>}/>
           <Route path="*" element={<Navigate to='/' replace />}/>
         </Routes>
       <Footer/>

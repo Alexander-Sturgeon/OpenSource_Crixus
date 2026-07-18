@@ -62,7 +62,7 @@ function NewFighterPage() {
         const elements = event.currentTarget.elements as FormElements;
         const f_name = elements.fighter_name_input.value;
         const l_name = elements.fighter_l_name_input.value;
-        const appear = "";
+        const appear = appearance;
         const str = stats.strength;
         const dex = stats.dexterity;
         const con = stats.constitution;
@@ -71,7 +71,7 @@ function NewFighterPage() {
         const weapon = 1; //Default Weapon id
         const armour = 1; //Default Armour id
         const user = 1; //Default User id
-        const team= 23; //BIG LADs team is the Default
+        const team= 1; //BIG LADs team is the Default
         try{
             //Try creating a NewFighter with the data.
             const createdFighter: NewFighter ={
