@@ -11,14 +11,22 @@ import FighterCard from "../components/FighterCard";
 import { data, Link } from "react-router-dom";
 import ItemRarityRendered from "../utility/ItemRarityRendered";
 //Data
+import EditFighterPage from "./EditFighterPage";
 
 
 function FightersView(){
+    const [successMsg, setSuccessMsg] = useState(false);
     const [fighterCount, setFighterCount] = useState(0);
     const [selectedToggle, setSelectedToggle] = useState(false)
+    const [editToggle, setEditToggle] = useState(false)
     const [selectedFighter, setSelectedFighter] = useState<Fighter | null>();
     const fighterWeapon = selectedFighter?.weaponId;
     const fighterArmor = selectedFighter?.armourId;
+
+    function successfulEdit(){
+        setEditToggle(false);
+        setSuccessMsg(true);
+    }
 
     //DEFAULTS WITH A TEST FIGHTER REMOVE LATER
     const [fighters, setFighters] = useState<Fighter[]>([]);
@@ -132,14 +140,33 @@ function FightersView(){
                     </div>
                 </div>
             </div>
-            <div className="fighter-edt-dlt-btns">
-                <button className="fighter-edit-btn">
-                    Edit Fighter
-                </button>
-                <button className="fighter-delete-btn" onClick={() => selectedFighter && deleteFighter(selectedFighter?.fighterId)}>
-                    Delete Fighter
-                </button>
+
+            <div className="fighter-selected-edt-dlt">
+                {!selectedToggle ?
+                    <div><p>No fighter selected to edit or delete</p></div>
+                    :
+                <div className="fighter-edt-dlt-btns">
+                    <button className="fighter-edit-btn" onClick={() => setEditToggle(true)}>
+                        Edit Fighter
+                    </button>
+                    <button className="fighter-delete-btn" onClick={() => selectedFighter && deleteFighter(selectedFighter?.fighterId)}>
+
+                        Delete Fighter
+                    </button>
+                </div>
+                }
             </div>
+            <div>
+                {editToggle ?
+                <div>
+                    <EditFighterPage id={1} onSuccess={successfulEdit}/>
+                </div>
+                    :
+                <p>no edit page</p>
+                }
+                <div>{successMsg && <p>Updated Fighter Successfully!</p>}</div>
+            </div>
+
             <div className="fighter-list">
                 {fighters.map((fighter) =>(
                     <button key={fighter.fighterId} className="fighter-card-btn" style={{transform: selectedFighter?.fighterId == fighter.fighterId ? "translateY(-1rem)":"none"}} onClick={() => selectFighter(fighter)}>
