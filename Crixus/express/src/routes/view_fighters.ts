@@ -79,24 +79,39 @@ router.get("/users/:userId/fighters", async (req: Request, res: Response) => {
     }
 })
 
+//DELETE 
 router.delete("/fighters/:fighterId", async (req: Request, res: Response) => {
     const fighter_id = Number(req.params.fighterId);
     if (isNaN(fighter_id)) {
         return res.status(400).json({ message: "Invalid Fighter ID" })
     }
 
+    const conn = await pool.getConnection();
     try {
-        const [result] = await pool.query<ResultSetHeader>("DELETE FROM fighter WHERE fighter_id = ?",
+        await conn.beginTransaction();
+
+        // Remove join rows first so the FK constraint on fighter_has_battle doesn't block the delete
+        await conn.query("DELETE FROM fighter_has_battle WHERE Fighter_fighter_id = ?",
             [fighter_id]);
+
+        const [result] = await conn.query<ResultSetHeader>("DELETE FROM fighter WHERE fighter_id = ?",
+            [fighter_id]);
+
         if (result.affectedRows === 0) {
+            await conn.rollback();
             return res.status(404).json({ message: "Fighter Not Found" })
         }
 
+        await conn.commit();
         return res.status(200).json({ message: "Fighter Successfully Deleted" })
     }
     catch (err) {
+        await conn.rollback();
         console.error(err)
         res.status(500).json({ message: "Database Error" })
+    }
+    finally {
+        conn.release();
     }
 
 

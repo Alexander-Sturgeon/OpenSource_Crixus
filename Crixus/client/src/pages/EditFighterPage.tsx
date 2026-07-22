@@ -1,4 +1,4 @@
-// import "../styles/EditFighterPage.css";
+import "../styles/EditFighterPage.css";
 import { useState, useEffect } from "react";
 
 interface EditPageProp{
@@ -70,11 +70,13 @@ function EditFighterPage({id, onSuccess}: EditPageProp){
     }
 
     return(
-        <section>                
+        <section className="edit-fighter-body">                
             <h1>Edit Fighter</h1>
-            <form onSubmit={HandleSubmit}>
-                <div className="edit_appearnace">
+            <form className="edit-fighter-form" onSubmit={HandleSubmit}>
+                <div className="edit-appearance">
                     {/* edit appearance section */}
+                    <img className="fighter-preview" src={selectedFighter?.appearance} alt="Selected Fighters Appearance"></img>
+
                     <label htmlFor="edit_fighter_image">Fighter Appearance: </label>
                     <select value={selectedFighter?.appearance} onChange={(event) => {if (!selectedFighter) return;setSelectedFighter({...selectedFighter, appearance: event.target.value})}}>
                         {fightersImg.map((img) => (
@@ -83,48 +85,47 @@ function EditFighterPage({id, onSuccess}: EditPageProp){
                             </option>
                         ))}
                     </select>
-                    <img className="fighter-preview" src={selectedFighter?.appearance} alt="Selected Fighters Appearance"></img>
                 </div>
 
-                <div className="edit_firstname">
+                <div className="edit-firstname">
                     {/* first name input  */}
                     <label htmlFor="first_name_input">First Name: </label>
-                    <input type="text" id="first_name_input" name="first_name_input" value={selectedFighter?.first_name} onChange={(event) => {if (!selectedFighter) return; setSelectedFighter({...selectedFighter, first_name: event.target.value})}} required />
+                    <input type="text" id="first_name_input" name="first_name_input" value={selectedFighter?.first_name??""} onChange={(event) => {if (!selectedFighter) return; setSelectedFighter({...selectedFighter, first_name: event.target.value})}} required />
                 </div>
 
-                <div className="edit_lastname">
+                <div className="edit-lastname">
                     {/* last name input */}
                     <label htmlFor="last_name_input">Last Name: </label>
-                    <input type="text" id="last_name_input" name="last_name_input" value={selectedFighter?.last_name} onChange={(event) => {if(!selectedFighter) return; {setSelectedFighter({...selectedFighter, last_name: event.target.value})}}} required/>
+                    <input type="text" id="last_name_input" name="last_name_input" value={selectedFighter?.last_name??""} onChange={(event) => {if(!selectedFighter) return; {setSelectedFighter({...selectedFighter, last_name: event.target.value})}}} required/>
                 </div>
 
-                <div className="edit_stats">
-                    <div className="edit_strength">
+                <div className="edit-stats">
+                    <div className="edit-strength">
                         {/* edit strength */}
                         <label htmlFor="edit_strength_input">Strength: </label>
-                        <input type="number" id="edit_strength_input" name="edit_strength_input" value={selectedFighter?.strength} onChange={(event) => ChangeStat("strength", event.target.value)} required/>
+                        <input type="number" id="edit_strength_input" name="edit_strength_input" value={selectedFighter?.strength??""} onChange={(event) => ChangeStat("strength", event.target.value)} required/>
                     </div>
 
-                    <div className="edit_dexterity">
+                    <div className="edit-dexterity">
                         {/* edit dexterity */}
                         <label htmlFor="edit_dexterity_input">Dexterity: </label>
-                        <input type="number" id="edit_dexterity_input" name="edit_dexterity_input" value={selectedFighter?.dexterity} onChange={(event) => ChangeStat("dexterity", event.target.value)} required/>
+                        <input type="number" id="edit_dexterity_input" name="edit_dexterity_input" value={selectedFighter?.dexterity??""} onChange={(event) => ChangeStat("dexterity", event.target.value)} required/>
                     </div>
 
-                    <div className="edit_constitution">
+                    <div className="edit-constitution">
                         {/* edit constitution  */}
                         <label htmlFor="edit_constitution_input">Constitution</label>
-                        <input type="number" id="edit_constitution_input" name="edit_constitution_input" value={selectedFighter?.constitution} onChange={(event) => ChangeStat("constitution", event.target.value)} required/>
+                        <input type="number" id="edit_constitution_input" name="edit_constitution_input" value={selectedFighter?.constitution??""} onChange={(event) => ChangeStat("constitution", event.target.value)} required/>
                     </div>
 
-                    <div className="edit_intelligence">
+                    <div className="edit-intelligence">
                         {/* edit intelligence  */}
                         <label htmlFor="edit_intelligence_input">Intelligence</label>
-                        <input type="number" id="edit_intelligence_input" name="edit_intelligence_input" value={selectedFighter?.intelligence} onChange={(event) => ChangeStat("intelligence", event.target.value)} required/>
+                        <input type="number" id="edit_intelligence_input" name="edit_intelligence_input" value={selectedFighter?.intelligence??""} onChange={(event) => ChangeStat("intelligence", event.target.value)} required/>
                     </div>
                 </div>
 
-                <div className="submit_button">
+                <div className="submit-button">
                     <button type="submit">
                         Edit Fighter    
                     </button>

@@ -1,0 +1,25 @@
+.edit-fighter-body{
+    background-color: #C0C0C0;
+    margin:.5rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 2px solid black;
+}
+.edit-fighter-form{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    gap: .5rem;
+}
+.edit-appearance{
+    display: flex;
+    flex-direction: column;
+}
+.edit-firstname, .edit-lastname, .edit-strength, .edit-constitution, .edit-intelligence, .edit-dexterity{
+    display: flex;
+    flex-direction: column;
+}
+.submit-button button{
+    padding: .5rem;
+    border-radius: .25rem;
+}

@@ -3,12 +3,9 @@ import { useState, useEffect } from "react";
 //Styles
 import "../styles/ViewFighterPage.css";
 import Fighter from "../data/Fighter";
-//Test Object of Fighter
-import testFighter from "../data/TestFighter";
-import testFighter2 from "../data/TestFighterTwo";
 //Components
 import FighterCard from "../components/FighterCard";
-import { data, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ItemRarityRendered from "../utility/ItemRarityRendered";
 //Data
 import EditFighterPage from "./EditFighterPage";
@@ -20,32 +17,29 @@ function FightersView(){
     const [selectedToggle, setSelectedToggle] = useState(false)
     const [editToggle, setEditToggle] = useState(false)
     const [selectedFighter, setSelectedFighter] = useState<Fighter | null>();
+    const [selectedFighterId, setSelectedFighterId] = useState<number>(0);
     const fighterWeapon = selectedFighter?.weaponId;
     const fighterArmor = selectedFighter?.armourId;
+    const [fighters, setFighters] = useState<Fighter[]>([]);
 
     function successfulEdit(){
         setEditToggle(false);
         setSuccessMsg(true);
+        window.location.reload();
     }
-
-    //DEFAULTS WITH A TEST FIGHTER REMOVE LATER
-    const [fighters, setFighters] = useState<Fighter[]>([]);
     
-    
-    
+    //LOAD FIGHTER
     async function loadFighters() {
             const response = await fetch(`http://localhost:3000/fighters/users/${1}/fighters`);
             const data: Fighter[] = await response.json();
             setFighters(data)
         }
-
-
     useEffect(()=> {
         
         loadFighters()
     },[1]);
 
-    
+    //DELETE FIGHTER
     async function deleteFighter(id:Number) {
         try{
             const response = await fetch(`http://localhost:3000/fighters/fighters/${id}`, {
@@ -56,7 +50,9 @@ function FightersView(){
                 console.error("Failed to delete fighter");
                 return;
             }
-
+            
+            const message = await response.json();
+            console.log(message);
             await loadFighters();
             setSelectedFighter(null);
             setSelectedToggle(false);
@@ -67,15 +63,16 @@ function FightersView(){
         }
             
     }
-    
-
-
     useEffect(() =>{
         setFighterCount(fighters.length)
     }, [fighters]);
+
+    //SELECT FIGHTER
     function selectFighter(fighter:Fighter){
         setSelectedToggle(true);
         setSelectedFighter(fighter);
+        setSelectedFighterId(fighter.fighterId)
+
     }
     return(
         <section className="fighters-view">
@@ -143,13 +140,13 @@ function FightersView(){
 
             <div className="fighter-selected-edt-dlt">
                 {!selectedToggle ?
-                    <div><p>No fighter selected to edit or delete</p></div>
+                    <div></div>
                     :
                 <div className="fighter-edt-dlt-btns">
                     <button className="fighter-edit-btn" onClick={() => setEditToggle(true)}>
                         Edit Fighter
                     </button>
-                    <button className="fighter-delete-btn" onClick={() => selectedFighter && deleteFighter(selectedFighter?.fighterId)}>
+                    <button className="fighter-delete-btn" onClick={() => selectedFighter && deleteFighter(selectedFighterId)}>
 
                         Delete Fighter
                     </button>
@@ -157,12 +154,10 @@ function FightersView(){
                 }
             </div>
             <div>
-                {editToggle ?
+                {editToggle &&
                 <div>
-                    <EditFighterPage id={1} onSuccess={successfulEdit}/>
+                    <EditFighterPage id={selectedFighterId} onSuccess={successfulEdit}/>
                 </div>
-                    :
-                <p>no edit page</p>
                 }
                 <div>{successMsg && <p>Updated Fighter Successfully!</p>}</div>
             </div>

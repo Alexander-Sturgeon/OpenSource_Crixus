@@ -1,4 +1,5 @@
 //Styles
+import { Navigate, useNavigate } from "react-router-dom";
 import "../styles/NewFighterPage.css";
 //Data
 import { useState } from "react";
@@ -42,6 +43,7 @@ interface FormElements extends HTMLFormControlsCollection {
 function NewFighterPage() {
     const[appearance,setAppearance] = useState("/fighters/Fighter.png");
     const [fighter, setFighter] = useState<NewFighter | null>(null);
+    const navigate = useNavigate();
     const [stats, setStats] = useState({
         strength: 0,
         dexterity: 0,
@@ -89,14 +91,13 @@ function NewFighterPage() {
                 team_id: team,
             }
             setFighter(createdFighter);
+            CreateFighter(createdFighter);
         }catch{
             console.log("Failed to Create character. Input not valid.")
         }
-        //Null checking the fighter just to be safe
-        if(fighter != null){
-            CreateFighter(fighter);
-            console.log("Fighter submitted with the first name of: ", f_name);
-        }
+        
+        console.log("Fighter submitted with the first name of: ", f_name);
+        
         
     }
     
@@ -120,6 +121,7 @@ function NewFighterPage() {
             if (!res.ok) throw new Error(`Server responded ${res.status}`);
             const data = await res.json();
             console.log("Created fighter, id:", data.fighter_id);
+            navigate('/fighters')
         } catch (err) {
             console.log("There was an error creating fighter", err);
         }
@@ -151,19 +153,19 @@ function NewFighterPage() {
                         <div className="stat-Group-One">
                             <label className="stat-label" htmlFor="fighter_str_input">Strength:</label>
                             <input className="stat-input" id="fighter_str_input" name="fighter_str_input" type="number" value={stats.strength} 
-                                min={0} max={Math.min(20, stats.strength + pointPool)} onChange={(event) => ChangeStat("strength", event.target.value)}/>
+                                min={0}  onChange={(event) => ChangeStat("strength", event.target.value)}/>
 
                             <label className="stat-label" htmlFor="fighter_dex_input">Dexterity:</label>
                             <input className="stat-input" id="fighter_dex_input" name="fighter_dex_input" type="number" value={stats.dexterity} 
-                                min={0} max={Math.min(20, stats.strength + pointPool)} onChange={(event) => ChangeStat("dexterity", event.target.value)}/>
+                                min={0}  onChange={(event) => ChangeStat("dexterity", event.target.value)}/>
                         </div>
                         <div className="stat-Group-Two">
                             <label className="stat-label" htmlFor="fighter_con_input">Constitution:</label>
                             <input className="stat-input" id="fighter_con_input" name="fighter_con_input" type="number" value={stats.constitution} 
-                                min={0} max={Math.min(20, stats.strength + pointPool)} onChange={(event) => ChangeStat("constitution", event.target.value)}/>
+                                min={0}  onChange={(event) => ChangeStat("constitution", event.target.value)}/>
                         <label className="stat-label" htmlFor="fighter_int_input">Intelligence:</label>
                         <input className="stat-input" id="fighter_int_input" name="fighter_int_input" type="number" value={stats.intelligence} 
-                            min={0} max={Math.min(20, stats.strength + pointPool)} onChange={(event) => ChangeStat("intelligence", event.target.value)}/>
+                            min={0}  onChange={(event) => ChangeStat("intelligence", event.target.value)}/>
                         </div>
                         
                         
