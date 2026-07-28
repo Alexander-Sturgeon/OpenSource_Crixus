@@ -29,6 +29,7 @@ function AboutUsPage(){
                     <ul>
                         <li>Database</li>
                         <li>Objects</li>
+                        <li>UPDATE Fighter</li>
                     </ul>
                 </div>
             </div>
@@ -45,6 +46,8 @@ function AboutUsPage(){
                     <ul>
                         <li>Frontend Design</li>
                         <li>React Implementation</li>
+                        <li>GET(s) for Armory</li>
+                        <li>New Fighter POST</li>
                     </ul>
                 </div>
                 <div className="student-name">
@@ -65,6 +68,7 @@ function AboutUsPage(){
                     <ul>
                         <li>Rest API</li>
                         <li>API Architecture</li>
+                        <li>View Fighter GET &amp; DELETE</li>
                     </ul>
                 </div>
             </div>
