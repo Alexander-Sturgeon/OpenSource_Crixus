@@ -2,7 +2,18 @@ import { useState, useEffect } from "react";
 import ItemCard from "./ItemCard";
 import type Weapon from "../data/Weapon";
 
-function WeaponsTab(){
+//  Search filter 
+function filterWeapons(items: Weapon[], search:string){
+    const query = search.trim().toLowerCase()
+    if (!query) return items;
+    return items.filter((item)=>
+    item.name.toLowerCase().includes(query) ||
+    item.type.toLowerCase().includes(query)||
+    item.rarity.toString().includes(query)
+    );
+}
+
+function WeaponsTab({search}:{search:string}){
     const [weapons, setWeapons] =  useState<Weapon[]>([]);
     useEffect(() => {
         fetch("http://localhost:3000/armory/api/weapon")
@@ -11,10 +22,12 @@ function WeaponsTab(){
             .catch((err) => console.error("Weapons failed to fetch.", err));
     }, []);
 
+    const filteredWeapons  = filterWeapons(weapons,search)
+
     return(
         <div>
             <div className="home-tool-highlights">
-                {weapons.slice(0,3).map((weapon) => (
+                {filteredWeapons.slice(0,3).map((weapon) => (
                     <ItemCard key={weapon.weapon_id} item={weapon}/>
                 ))}
 
@@ -30,7 +43,7 @@ function WeaponsTab(){
                         </tr>
                     </thead>
                     <tbody>
-                        {weapons.map((weapon)=>(
+                        {filteredWeapons.map((weapon)=>(
                           <tr key={weapon.weapon_id}>
                             <td>
                                 <p>{weapon.name}</p>

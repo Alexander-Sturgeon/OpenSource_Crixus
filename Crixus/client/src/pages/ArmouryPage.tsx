@@ -14,6 +14,10 @@ function ArmoryPage(){
         setPage(toggle)
         setTabColor(toggle)
     }
+
+//  storing the user's search
+const[search, setSearch] = useState("");
+
     return(
         <section>
             <div className="tab-btns">
@@ -28,12 +32,15 @@ function ArmoryPage(){
             <div className="tab-view">
                 
                 <div className="tab-body">
-                    <form className="search-bar">
-                        <input placeholder="search by name or rarity.."/>
+                    <form className="search-bar" onSubmit={(e) => e.preventDefault()}>
+                        <input placeholder="search by name, type or rarity.."
+                        value={search}
+                        onChange={(e)=> setSearch(e.target.value)}
+                        />              
                         <button>Search</button>
                     </form>
                     <div>
-                        {page ? <WeaponsTab/> : <ArmorTab/>}
+                        {page ? <WeaponsTab search={search}/> : <ArmorTab search={search}/>}
                     </div>
                     
                 </div>

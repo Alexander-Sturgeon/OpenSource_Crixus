@@ -6,7 +6,7 @@ const router = Router();
 
 //Gets all armour
 router.get("/api/armor", async(_req: Request, res: Response) => {
-    const [rows] = await pool.query("SELECT * FROM armour");
+    const [rows] = await pool.query("SELECT armour_id AS armourId, name, appearance, damage_protection, type, price, rarity FROM armour");
     res.json(rows);
 });
 
