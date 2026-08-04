@@ -14,12 +14,17 @@ Crixus is a fight organizer designed for medieval fight reenactments. This will 
 
 ## Tech Stack
 Typescript - Express + Typescript
-Postgres - MySQL
-Potential React.js frontend implementation
+Database - MySQL
+Frontend - React.js
 
 
 ## Setup Instructions
 The following steps must be taken in order to ensure Crixus functions as intended.
+
+**Downloading Crixus**
+1. git clone the repo onto your local machine.
+2. Ensure that you have MySQL plus is workbench correctly installed and running.
+3. Ensure that your NODE version is installed and up to date. 
 
 **Client side**
 1. Navigate to the /client folder.
@@ -39,9 +44,8 @@ The following steps must be taken in order to ensure Crixus functions as intende
 11. load the seed.sql file located in /Crixus/express.
 12. From the crixus schema, run the seed.sql file. It's important that this seed file run in the crixus schema. 
 
-**Testing the server-side and database**
-In the current implementation, the client side and server side are not connected. Because of this, you cannot access the loaded seed data in the database from the front end. In order to access to run the server side and thus access the database information, you must complete the following steps. 
-
-1. Navigate to Crixus/express
-2. In the terminal, run 'npm run dev'
-3. Access the server, which by default runs on port 3000
+**Running Crixus**
+1. Navigate to Crixus/express and, in the terminal, run 'npm run dev'. The server runs on port 3000. 
+2. While keeping the backend running, open a new git bash terminal. 
+3. Navigate to Crixus/client and, in the terminal, run 'npm run dev'. The client runs on port 5173.
+4. In the browser, navigate to http://localhost:5173
