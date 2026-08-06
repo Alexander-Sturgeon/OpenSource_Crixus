@@ -39,7 +39,7 @@ function HomePage(){
             <div className="home-tool-highlights">
                 {randomThree.map((item) => (
                     <ItemCard
-                        key={"armourId" in item ? item.armourId : item.weapon_id}
+                        key={"armourId" in item ? `armour-${item.armourId}` : `weapon-${item.weapon_id}`}
                         item={item}
                     />
                 ))}
