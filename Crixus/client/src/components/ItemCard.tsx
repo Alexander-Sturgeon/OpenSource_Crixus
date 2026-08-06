@@ -31,7 +31,6 @@ function ItemCard({item}: ItemCardProps){
     useEffect(() => {
         ItemRaritySelector(item.rarity);
     },[]);
-    // const isWeapon = "damage" in item;
     
     return(
         <div className="item-card-main" style={{backgroundImage: `url(${item.appearance})`}}>
