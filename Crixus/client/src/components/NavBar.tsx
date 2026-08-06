@@ -6,7 +6,7 @@ import drawerIcon from "../assets/drawer.png";//Default Image (Replace later)
 import Logo from "../assets/LogoPlaceholder.png";//Default Image (Replace later)
 //Logic
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 //Side Bar
 function Navbar(){
     const [toggle, setToggle] = useState(false);
@@ -18,8 +18,10 @@ function Navbar(){
                 <button className="nav-drawer" onClick={() => setToggle(!toggle)}>
                     <img src={drawerIcon} alt="Drawer Icon"/>
                 </button>
-                {/* <a>{isUser ?? User.name : Login}</a> */}
-                <p className="username-or-login">Login</p>
+                {/* {isUser ? User.name 
+                : <Link to='/login'><p>Login</p></Link>} */}
+                <Link className="nav-username-or-login" to='/login'><p>Login</p></Link>
+
             </div>
             
             <div className="nav-title">
