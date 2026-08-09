@@ -1,7 +1,7 @@
 import "../styles/ItemCard.css"
 import type Weapon from "../data/Weapon";
 import type Armour from "../data/Armour";
-
+import { useEffect, useState } from "react";
 type CardItem = Weapon | Armour;
 interface ItemCardProps{
     item: CardItem;
@@ -9,18 +9,45 @@ interface ItemCardProps{
 
 
 function ItemCard({item}: ItemCardProps){
-    // const isWeapon = "damage" in item;
+    const [itemRarity,setItemRarity] = useState<String | null>(null);
+
+    function ItemRaritySelector(rarity: number){
+        switch(rarity){
+            case 1:  
+                setItemRarity("Legendary");
+                break;
+            case 2:
+                setItemRarity("Rare");
+                break;
+            case 3:
+                setItemRarity("Common")
+                break;
+            default:
+                console.log("Error: Unknown rarity status");
+                break;
+        }
+        
+    }
+    useEffect(() => {
+        ItemRaritySelector(item.rarity);
+    },[]);
+    
     return(
         <div className="item-card-main" style={{backgroundImage: `url(${item.appearance})`}}>
-              <h3 className="item-card-name">{item.name}</h3>
-              <p className="item-card-type">{item.type}</p>
-              {/* <p className="item-card-stat">
-                  {isWeapon
-                      ? `Damage: ${item.damage}`
-                      : `Protection: ${item.damage_protection}`}
-              </p> */}
-              <p className="item-card-price">{item.price} gold</p>
-              <p className="item-card-rarity">Rarity:{item.rarity}</p>
+            <h3 className="item-card-name">{item.name}</h3>
+            <div className="item-details">
+                <p className="item-card-type">Type: {item.type}</p>
+                {/* <p className="item-card-stat">
+                    {isWeapon
+                        ? `Damage: ${item.damage}`
+                        : `Protection: ${item.damage_protection}`}
+                </p> */}
+                <p className="item-card-price">Price: {item.price} gold</p>
+                <p className="item-card-rarity">Rarity: {itemRarity}</p>
+            </div>
+            
+              
+              
           </div>
     )
 }

@@ -48,8 +48,8 @@
 .nav-right{
     flex: 1;
 }
-.username-or-login{
-    cursor: pointer;
+.nav-username-or-login{
+    /* cursor: pointer; */
     color:white;
     background: transparent;
     border: none;
