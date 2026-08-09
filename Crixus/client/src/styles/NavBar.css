@@ -48,14 +48,15 @@
 .nav-right{
     flex: 1;
 }
-.nav-username-or-login{
-    /* cursor: pointer; */
+.username-or-login{
+    cursor: pointer;
     color:white;
     background: transparent;
     border: none;
     padding: 0;
     margin: 0;
     font: inherit;
+    text-decoration: none;
 }
 .username-or-login:hover{
     color: #C0C0C0;

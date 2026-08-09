@@ -6,6 +6,7 @@ import drawerIcon from "../assets/drawer.png";//Default Image (Replace later)
 import Logo from "../assets/LogoPlaceholder.png";//Default Image (Replace later)
 //Logic
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 //Side Bar
 function Navbar(){
@@ -47,7 +48,7 @@ function Navbar(){
                         <button className="username-or-login logout-btn" onClick={handleLogout}>Logout</button>
                     </>
                 ) : (
-                    <p className="username-or-login">Login</p>
+                    <Link className="username-or-login" to="/login">Login</Link>
                 )}
             </div>
             
