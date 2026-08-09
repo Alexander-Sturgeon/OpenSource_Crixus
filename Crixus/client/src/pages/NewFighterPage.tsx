@@ -16,8 +16,6 @@ interface NewFighter{
     salary: number;
     weapon_id: number;
     armour_id: number;
-    user_id:number;
-    team_id:number;
 }
 //For the Fighter Appearances
 const fightersImg =[
@@ -72,8 +70,6 @@ function NewFighterPage() {
         const sal = 500; //Default salary for scalability one day
         const weapon = 1; //Default Weapon id
         const armour = 1; //Default Armour id
-        const user = 1; //Default User id
-        const team= 1; //BIG LADs team is the Default
         try{
             //Try creating a NewFighter with the data.
             const createdFighter: NewFighter ={
@@ -87,8 +83,6 @@ function NewFighterPage() {
                 salary: sal,
                 weapon_id: weapon,
                 armour_id: armour,
-                user_id: user,
-                team_id: team,
             }
             setFighter(createdFighter);
             CreateFighter(createdFighter);
@@ -113,9 +107,10 @@ function NewFighterPage() {
             fetch("http://localhost:3000/api/newfighters/create", {
                 method: "POST",
                 headers: {
-                'Accept': 'application/json', 
+                'Accept': 'application/json',
                 "Content-Type": "application/json",
                 },
+                credentials: "include",
                 body: JSON.stringify(new_fighter),
             });
             if (!res.ok) throw new Error(`Server responded ${res.status}`);

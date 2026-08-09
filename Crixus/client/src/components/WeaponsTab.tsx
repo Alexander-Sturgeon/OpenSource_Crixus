@@ -16,7 +16,7 @@ function filterWeapons(items: Weapon[], search:string){
 function WeaponsTab({search}:{search:string}){
     const [weapons, setWeapons] =  useState<Weapon[]>([]);
     useEffect(() => {
-        fetch("http://localhost:3000/armory/api/weapon")
+        fetch("http://localhost:3000/armory/api/weapon", { credentials: "include" })
             .then((res) => res.json())
             .then((data:Weapon[]) => setWeapons(data))
             .catch((err) => console.error("Weapons failed to fetch.", err));

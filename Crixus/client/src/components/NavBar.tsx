@@ -5,11 +5,34 @@ import Sidebar from "./SideBar";
 import drawerIcon from "../assets/drawer.png";//Default Image (Replace later)
 import Logo from "../assets/LogoPlaceholder.png";//Default Image (Replace later)
 //Logic
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 //Side Bar
 function Navbar(){
     const [toggle, setToggle] = useState(false);
+    const [username, setUsername] = useState<string | null>(null);
+
+    useEffect(() => {
+        async function checkAuth() {
+            try {
+                const res = await fetch("http://localhost:3000/api/auth/verify", { credentials: "include" });
+                const data = res.ok ? await res.json() : null;
+                setUsername(data?.username ?? null);
+            } catch (err) {
+                setUsername(null);
+            }
+        }
+
+        checkAuth();
+    }, []);
+
+    async function handleLogout() {
+        await fetch("http://localhost:3000/api/auth/logout", {
+            method: "POST",
+            credentials: "include",
+        });
+        window.location.href = "/login";
+    }
 
     return(
         <nav className="nav-component">
@@ -18,8 +41,14 @@ function Navbar(){
                 <button className="nav-drawer" onClick={() => setToggle(!toggle)}>
                     <img src={drawerIcon} alt="Drawer Icon"/>
                 </button>
-                {/* <a>{isUser ?? User.name : Login}</a> */}
-                <p className="username-or-login">Login</p>
+                {username ? (
+                    <>
+                        <p className="username-or-login">{username}</p>
+                        <button className="username-or-login logout-btn" onClick={handleLogout}>Logout</button>
+                    </>
+                ) : (
+                    <p className="username-or-login">Login</p>
+                )}
             </div>
             
             <div className="nav-title">

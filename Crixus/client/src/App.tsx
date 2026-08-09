@@ -10,6 +10,7 @@ import ArenaPage from "./pages/ArenaPage";
 import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 //Components
 import Navbar from "./components/NavBar";
+import ProtectedRoute from "./components/ProtectedRoute";
 //Styles
 import Footer from "./components/Footer";
 import "../src/App.css";
@@ -21,12 +22,16 @@ function App(){
       <Navbar/>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
-          <Route path="/armoury" element={<ArmouryPage/>}/>
           <Route path="/aboutus" element={<AboutUsPage/>}/>
           <Route path="/login" element={<LoginPage/>}/>
-          <Route path="/fighters" element={<ViewFighterPage/>}/>
-          <Route path="/newfighter" element={<NewFighterPage/>}/>
           <Route path="/arena" element={<ArenaPage/>}/>
+
+          <Route element={<ProtectedRoute/>}>
+            <Route path="/armoury" element={<ArmouryPage/>}/>
+            <Route path="/fighters" element={<ViewFighterPage/>}/>
+            <Route path="/newfighter" element={<NewFighterPage/>}/>
+          </Route>
+
           <Route path="*" element={<Navigate to='/' replace />}/>
         </Routes>
       <Footer/>

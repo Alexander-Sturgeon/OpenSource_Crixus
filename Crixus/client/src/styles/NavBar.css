@@ -51,11 +51,18 @@
 .username-or-login{
     cursor: pointer;
     color:white;
-
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
 }
 .username-or-login:hover{
     color: #C0C0C0;
-    
+
+}
+.logout-btn{
+    margin-left: .5rem;
 }
 
 /* Sidebar */

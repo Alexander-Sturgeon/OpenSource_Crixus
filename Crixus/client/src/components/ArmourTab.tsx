@@ -22,7 +22,7 @@ function filterArmours(items: Armour[], search:string){
 function ArmoryTab({search}:{search:string}){
     const [armour, setArmour] =  useState<Armour[]>([]);
     useEffect(() => {
-        fetch("http://localhost:3000/armory/api/armor")
+        fetch("http://localhost:3000/armory/api/armor", { credentials: "include" })
             .then((res) => res.json())
             .then((data:Armour[]) => setArmour(data))
             .catch((err) => console.error("Armour failed to fetch.", err));

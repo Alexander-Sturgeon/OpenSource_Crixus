@@ -6,10 +6,21 @@ const router = Router();
 
 router.post("/create", async (req: Request, res:Response) => {
     try {
+        const user_id = (req as any).userId;
+
+        const [userRows]: any = await pool.query(
+            `SELECT Team_team_id FROM User WHERE user_id = ?`,
+            [user_id]
+        );
+        if (!userRows.length) {
+            return res.status(401).json({ error: "User not found" });
+        }
+        const team_id = userRows[0].Team_team_id;
+
         const {
             first_name, last_name, appearance,
             strength, dexterity, constitution, intelligence, salary,
-            weapon_id, armour_id, user_id, team_id
+            weapon_id, armour_id
         } = req.body;
 
         //This query is made so that it won't be a SQL risk.

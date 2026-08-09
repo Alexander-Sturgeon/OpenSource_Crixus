@@ -30,7 +30,9 @@ function FightersView(){
     
     //LOAD FIGHTER
     async function loadFighters() {
-            const response = await fetch(`http://localhost:3000/fighters/users/${1}/fighters`);
+            const response = await fetch(`http://localhost:3000/fighters/users/fighters`, {
+                credentials: "include"
+            });
             const data: Fighter[] = await response.json();
             setFighters(data)
         }
@@ -43,7 +45,8 @@ function FightersView(){
     async function deleteFighter(id:Number) {
         try{
             const response = await fetch(`http://localhost:3000/fighters/fighters/${id}`, {
-                method: "DELETE"
+                method: "DELETE",
+                credentials: "include"
             })
 
             if(!response.ok){

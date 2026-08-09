@@ -12,11 +12,8 @@ router.get("/fighters/total", async (_req: Request, res: Response) => {
 
 //Gets all the fighter for the user with a specific userID
 
-router.get("/users/:userId/fighters", async (req: Request, res: Response) => {
-    const user_id = Number(req.params.userId);
-    if (isNaN(user_id)) {
-        return res.status(400).json({ message: "Invalid User ID" })
-    }
+router.get("/users/fighters", async (req: Request, res: Response) => {
+    const user_id = (req as any).userId;
 
     try {
         const [result] = await pool.query(`  SELECT f.fighter_id AS fighterId, f.first_name,f.last_name, f.appearance,f.strength,f.dexterity,f.constitution,f.intelligence,f.salary,
