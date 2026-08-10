@@ -51,7 +51,8 @@ function EditFighterPage({id, onSuccess}: EditPageProp){
                 method: "GET",
                 headers: {
                     "Accept": "application/json"
-                }
+                },
+                credentials: "include",
             });
             const data = await res.json();
             setSelectedFighter(data);
@@ -146,6 +147,7 @@ async function EditFighter(updated_fighter: EditFighter){
                 'Accept': 'application/json',
                 'Content-Type': "application/json",
             },
+            credentials: "include",
             body: JSON.stringify(updated_fighter),
         });
         if(!res.ok) throw new Error(`Server responded ${res.status}`);

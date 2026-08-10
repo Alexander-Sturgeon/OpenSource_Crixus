@@ -40,7 +40,7 @@ function LoginUser() {
             <form onSubmit={handleSubmit} className="login-user-form">
                 {/* I opted out of the labels as that seems to be the modern way to do it */}
                 <input type="text" id="username" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}/>
-                <input type="password" id="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                <input type="password" id="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} autoComplete="current-password"/>
 
                 <button type="submit">Log In</button>
             </form>

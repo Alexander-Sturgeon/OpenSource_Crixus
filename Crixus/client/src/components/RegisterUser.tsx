@@ -61,6 +61,7 @@ function RegisterUser(){
                 <input type="text" id="firstname" placeholder="First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
                 <input type="text" id="lastname" placeholder="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)} />
                 <input type="email" id="email" placeholder="crixus@email.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <label>Birthday</label>
                 <input type="date" id="birthdate" name="Birthday" value={birthDate} onChange={(e) => setBirthDate(e.target.value)} />
                 <input type="text" id="teamlabel" placeholder="Team Name" value={teamLabel} onChange={(e) => setTeamLabel(e.target.value)} />
                 <input type="password" id="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
