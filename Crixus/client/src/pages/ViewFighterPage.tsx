@@ -82,7 +82,7 @@ function FightersView(){
             <div className="fighters-view-upper">
                 <div className="fighters-count-display">
                     <h2>Fighters</h2>
-                    <h3>{fighterCount}/4</h3>
+                    <h3>{fighterCount}/∞</h3>
                 </div>
                 <div className="fighter-detail">
                     <div className="fighter-selected-body">

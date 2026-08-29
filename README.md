@@ -49,3 +49,17 @@ The following steps must be taken in order to ensure Crixus functions as intende
 2. While keeping the backend running, open a new git bash terminal. 
 3. Navigate to Crixus/client and, in the terminal, run 'npm run dev'. The client runs on port 5173.
 4. In the browser, navigate to http://localhost:5173
+
+# ScreenShots
+This is not all the pages just some of the important ones.
+## Home Page
+![CrixusHomePage](docs/CrixusHomePage.png)
+
+## View Fighters/Edit Fighter/Delete Fighter
+![ViewFightersPage](docs/CrixusViewFighters.png)
+
+## Add Fighter
+![CreateFighters](docs/CrixusAddFighter.png)
+
+## Armoury Page
+![ArmouryPage](docs/CrixusArmoury.png)
